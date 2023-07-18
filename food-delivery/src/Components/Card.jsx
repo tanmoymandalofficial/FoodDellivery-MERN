@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Card = () => {
+const Card = ({foodName, options = [] }) => {
   return (
         <div className="card m-3" style={{ "maxWidth":"400px"}}>
             <img src="https://source.unsplash.com/random/900×700/?fruit" className="card-img-top" alt="Product img" id='cardImg' style={{height:"200px", objectFit:"cover"}}/>
             <div className="card-body">
-                <h5 className="card-title">Product title</h5>
-                <p className="card-text">Product duscription</p>
+                <h5 className="card-title">{foodName}</h5>
+                {/* <p className="card-text">Product duscription</p> */}
                 <select name="" id="" className='m-2 w-33 bg-success rounded'>
                     {/* <option value="1" disabled selected>Quentity</option> */}
                     <option value="1">1</option>
@@ -17,9 +17,9 @@ const Card = () => {
                     <option value="5">5</option>
                 </select>
                 <select name="" id="" className='m-2 w-33 bg-success rounded'>
-                    <option value="half" disabled selected>Half</option>
-                    <option value="full">Full</option>
-                    
+                    <option value="half" selected>Half - {options.half}</option>
+                    <option value="full">Full - {options.full}</option>
+                                       
                 </select >
                 <p className='m-2 w-33 d-inline'>Total Price</p>
             </div>
